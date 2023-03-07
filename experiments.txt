@@ -1,0 +1,42 @@
+-------------------------------------------------
+|   Dataset: CUB (vortrainiert auf ImageNet1K)  |
+-------------------------------------------------
+
+# Train: 1-shot 5-way (result: Val Best Acc 0.8198; Test Acc 0.7531 + 0.0022)
+CUDA_VISIVBLE_DEVICES=0 python3 train_protonet.py --lr 0.0001 --temperature 128 --max_epoch 100 --model_type AmdimNet --dataset CUB --init_weights ./saves/initialization/cub/imagenet1K_ndf192_rkhs_1536_rd8_ssl_cpt.pth --save_path ./IMAGENET1K_ProtoNet_CUB_1shot_5way/ --shot 1 --way 5 --gpu 0 --step_size 10 --gamma 0.5 --ndf 192 --rkhs 1536 --nd 8
+
+# Evaluate: (result: Test Acc 0.7511 + 0.0022)
+CUDA_VISIVBLE_DEVICES=0 python3 eval_protonet.py --model_path ./IMAGENET1K_ProtoNet_CUB_1shot_5way/CUB-AmdimNet-ProtoNet/1_15_5_10_0.5_0.0001_128.0/epoch-last.pth --model_type AmdimNet --dataset CUB --ndf 192 --rkhs 1536 --nd 8
+
+# Train: 5-shot 5-way (result: Val Best Acc 0.8272; Test Acc 0.7272 + 0.0023)
+CUDA_VISIVBLE_DEVICES=0 python3 train_protonet.py --lr 0.0001 --temperature 128 --max_epoch 100 --model_type AmdimNet --dataset CUB --init_weights ./saves/initialization/cub/imagenet1K_ndf192_rkhs_1536_rd8_ssl_cpt.pth --save_path ./IMAGENET1K_ProtoNet_CUB_5shot_5way/ --shot 5 --way 5 --gpu 0 --step_size 10 --gamma 0.5 --ndf 192 --rkhs 1536 --nd 8
+
+# Evaluate: (result: )
+CUDA_VISIVBLE_DEVICES=0 python3 eval_protonet.py --model_path ./IMAGENET1K_ProtoNet_CUB_5shot_5way/CUB-AmdimNet-ProtoNet/5_15_5_10_0.5_0.0001_128.0/epoch-last.pth --model_type AmdimNet --dataset CUB --ndf 192 --rkhs 1536 --nd 8
+
+------------------------------------------
+|   Dataset: CUB (vortrainiert auf CUB)  |
+------------------------------------------
+
+# Train: 1-shot 5-way (result: )
+CUDA_VISIVBLE_DEVICES=0 python3 train_protonet.py --lr 0.0001 --temperature 128 --max_epoch 100 --model_type AmdimNet --dataset CUB --init_weights ./saves/initialization/cub/cub_ndf192_rkhs1536_rd8_ssl_cpt.pth --save_path ./CUB_ProtoNet_CUB_1shot_5way/ --shot 1 --way 5 --gpu 0 --step_size 10 --gamma 0.5 --ndf 192 --rkhs 1536 --nd 8
+
+# Evaluate: (result: Test Acc 0.6467 + 0.0024)
+CUDA_VISIVBLE_DEVICES=0 python3 eval_protonet.py --model_path ./CUB_ProtoNet_CUB_1shot_5way/CUB-AmdimNet-ProtoNet/1_15_5_10_0.5_0.0001_128.0/epoch-last.pth --model_type AmdimNet --dataset CUB --ndf 192 --rkhs 1536 --nd 8
+
+------------------------------------------------------------
+|   Dataset: MiniImageNet (vortrainiert auf MiniImageNet)  |
+------------------------------------------------------------
+
+# Train: 1-shot 5-way (result: )
+CUDA_VISIVBLE_DEVICES=0 python3 train_protonet.py --lr 0.0001 --temperature 128 --max_epoch 100 --model_type AmdimNet --dataset MiniImageNet --init_weights ./saves/initialization/miniimagenet/mini_imagenet_ndf192_rkhs1536_rd8_ssl_cpt.pth --save_path ./MINI_ProtoNet_MINI_1shot_5way/ --shot 1 --way 5 --gpu 0 --step_size 10 --gamma 0.5 --ndf 192 --rkhs 1536 --nd 8
+
+# Evaluate: (result: )
+CUDA_VISIVBLE_DEVICES=0 python3 eval_protonet.py --model_path ./MINI_ProtoNet_MINI_1shot_5way/MiniImageNet-AmdimNet-ProtoNet/1_15_5_10_0.5_0.0001_128.0/epoch-last.pth --model_type AmdimNet --dataset MiniImageNet --ndf 192 --rkhs 1536 --nd 8
+------------------------------------------------------------
+
+# Train: 5-shot 5-way (result: Val Best Acc 0.3945, Test Acc 0.3720 + 0.0015)
+CUDA_VISIVBLE_DEVICES=0 python3 train_protonet.py --lr 0.0001 --temperature 128 --max_epoch 100 --model_type AmdimNet --dataset MiniImageNet --init_weights ./saves/initialization/miniimagenet/mini_imagenet_ndf192_rkhs1536_rd8_ssl_cpt.pth --save_path ./MINI_ProtoNet_MINI_5shot_5way/ --shot 5 --way 5 --gpu 0 --step_size 10 --gamma 0.5 --ndf 192 --rkhs 1536 --nd 8
+
+# Evaluate: (result: Test Acc 0.2924 + 0.0015)
+CUDA_VISIVBLE_DEVICES=0 python3 eval_protonet.py --model_path ./MINI_ProtoNet_MINI_5shot_5way/MiniImageNet-ResNet-ProtoNet/5_15_5_10_0.5_0.0001_128.0/epoch-last.pth --model_type ResNet --dataset MiniImageNet --ndf 192 --rkhs 1536 --nd 8

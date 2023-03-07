@@ -1,4 +1,3 @@
-images
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,python
 
@@ -207,8 +206,3 @@ poetry.toml
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,python
 
-SSL-FEW-SHOT/.conda/
-SSL-FEW-SHOT/CUB*
-SSL-FEW-SHOT/IMAGE*
-SSL-FEW-SHOT/MINI*
-SSL-FEW-SHOT/saves/

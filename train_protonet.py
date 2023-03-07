@@ -21,8 +21,8 @@ if __name__ == '__main__':
     parser.add_argument('--step_size', type=int, default=10)
     parser.add_argument('--gamma', type=float, default=0.2)
     parser.add_argument('--temperature', type=float, default=1)
-    parser.add_argument('--model_type', type=str, default='ConvNet', choices=['ConvNet', 'ResNet', 'AmdimNet'])
-    parser.add_argument('--dataset', type=str, default='MiniImageNet', choices=['MiniImageNet', 'CUB', 'TieredImageNet'])
+    parser.add_argument('--model_type', type=str, default='AmdimNet', choices=['ConvNet', 'ResNet', 'AmdimNet'])
+    parser.add_argument('--dataset', type=str, default='CUB', choices=['MiniImageNet', 'CUB', 'TieredImageNet'])
     # MiniImageNet, ConvNet, './saves/initialization/miniimagenet/con-pre.pth'
     # MiniImageNet, ResNet, './saves/initialization/miniimagenet/res-pre.pth'
     # CUB, ConvNet, './saves/initialization/cub/con-pre.pth'
@@ -31,9 +31,9 @@ if __name__ == '__main__':
     parser.add_argument('--gpu', default='0')
 
     # AMDIM Modelrd
-    parser.add_argument('--ndf', type=int, default=256)
-    parser.add_argument('--rkhs', type=int, default=2048)
-    parser.add_argument('--nd', type=int, default=10)
+    parser.add_argument('--ndf', type=int, default=192)
+    parser.add_argument('--rkhs', type=int, default=1536)
+    parser.add_argument('--nd', type=int, default=8)
 
 
     args = parser.parse_args()

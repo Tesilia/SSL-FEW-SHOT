@@ -8,7 +8,8 @@ from torchvision import transforms
 
 THIS_PATH = osp.dirname(__file__)
 ROOT_PATH = osp.abspath(osp.join(THIS_PATH, '..', '..'))
-IMAGE_PATH = osp.join(ROOT_PATH, 'data/cub/images')
+IMAGE_PATH = '/data/aponik/Data/cub/images'
+#IMAGE_PATH = osp.join(ROOT_PATH, 'data/cub/images')
 SPLIT_PATH = osp.join(ROOT_PATH, 'data/cub/split')
 
 # This is for the CUB dataset, which does not support the ResNet encoder now

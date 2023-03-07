@@ -16,15 +16,15 @@ if __name__ == '__main__':
     parser.add_argument('--shot', type=int, default=1)
     parser.add_argument('--query', type=int, default=15)
     parser.add_argument('--way', type=int, default=5)
-    parser.add_argument('--model_type', type=str, default='ConvNet', choices=['ConvNet', 'ResNet', 'AmdimNet'])
-    parser.add_argument('--dataset', type=str, default='MiniImageNet', choices=['MiniImageNet', 'CUB', 'TieredImageNet'])    
+    parser.add_argument('--model_type', type=str, default='Amdim', choices=['ConvNet', 'ResNet', 'AmdimNet'])
+    parser.add_argument('--dataset', type=str, default='CUB', choices=['MiniImageNet', 'CUB', 'TieredImageNet'])    
     parser.add_argument('--model_path', type=str, default=None)
     parser.add_argument('--gpu', default='0')
 
     ### AMDIM MODEL
-    parser.add_argument('--ndf', type=int, default=256)
-    parser.add_argument('--rkhs', type=int, default=2048)
-    parser.add_argument('--nd', type=int, default=10)
+    parser.add_argument('--ndf', type=int, default=192)
+    parser.add_argument('--rkhs', type=int, default=1536)
+    parser.add_argument('--nd', type=int, default=8)
 
     args = parser.parse_args()
     args.temperature = 1 # we set temperature = 1 during test since it does not influence the results
